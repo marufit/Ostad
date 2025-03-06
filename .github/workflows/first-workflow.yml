@@ -1,0 +1,16 @@
+name: GitHub Actions First Workflow
+on: 
+  # Triggers on push to master branch
+  push:
+    branches: [ "master" ]
+
+jobs:
+  Checkout-Read-Actions:
+    name: Checkout and Read hello.txt file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Read hello file
+        run: cat hello.txt
